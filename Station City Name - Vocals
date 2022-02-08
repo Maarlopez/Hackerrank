@@ -14,5 +14,8 @@
 
 --SOLUCIÓN
 
-SELECT DISTINCT city FROM station WHERE city RLIKE '^[^aeiouAEIOU].*|.*[^AEIOUaeiou]$';
+SELECT DISTINCT(CITY) 
+FROM STATION 
+WHERE CITY NOT REGEXP '^[aeiou]' 
+    AND CITY NOT REGEXP '[aeiou]$';
 
